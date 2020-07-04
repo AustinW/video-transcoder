@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Austinw\VideoTranscoder\Tests;
 
 class ExampleTest extends TestCase
 {

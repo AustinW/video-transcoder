@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateVideoTranscoderTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('video_transcoder', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('media_id')->unique();
+
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->dateTime('processed_at')->nullable();
+            $table->unsignedTinyInteger('transcode_progress')->default(0);
+
+            $table->timestamps();
+        });
+    }
+}

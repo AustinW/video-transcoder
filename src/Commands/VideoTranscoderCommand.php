@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace Austinw\VideoTranscoder\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class VideoTranscoderCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'video-transcoder';
 
     public $description = 'My command';
 

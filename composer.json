@@ -1,17 +1,17 @@
 {
-    "name": "spatie/:package_name",
-    "description": ":package_description",
+    "name": "austinw/video-transcoder",
+    "description": "Leverage transcoding to serve videos in your Laravel app.",
     "keywords": [
-        "spatie",
-        ":package_name"
+        "austinw",
+        "video-transcoder"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/austinw/video-transcoder",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "name": "Austin White",
+            "email": "austingym@gmail.com",
+            "homepage": "https://github.com/austinw",
             "role": "Developer"
         }
     ],
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Austinw\\VideoTranscoder\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Austinw\\VideoTranscoder\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "Austinw\\VideoTranscoder\\VideoTranscoderServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "VideoTranscoder": "Austinw\\VideoTranscoder\\VideoTranscoderFacade"
             }
         }
     },
