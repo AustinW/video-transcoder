@@ -2,8 +2,8 @@
 
 namespace Austinw\VideoTranscoder\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Austinw\VideoTranscoder\VideoTranscoderServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

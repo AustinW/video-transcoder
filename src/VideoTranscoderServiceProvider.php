@@ -2,8 +2,8 @@
 
 namespace Austinw\VideoTranscoder;
 
-use Illuminate\Support\ServiceProvider;
 use Austinw\VideoTranscoder\Commands\VideoTranscoderCommand;
+use Illuminate\Support\ServiceProvider;
 
 class VideoTranscoderServiceProvider extends ServiceProvider
 {
