@@ -2,8 +2,8 @@
 
 namespace Austinw\VideoTranscoder;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Austinw\VideoTranscoder\Commands\VideoTranscoderCommand;
 
 class VideoTranscoderServiceProvider extends ServiceProvider
 {
@@ -23,11 +23,11 @@ class VideoTranscoderServiceProvider extends ServiceProvider
                     __DIR__ . '/../database/migrations/create_video_transcoder_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_video_transcoder_table.php'),
                 ], 'migrations');
             }
-
-            $this->commands([
-                VideoTranscoderCommand::class,
-            ]);
         }
+
+        Route::middlewareGroup('video-transcoder', config('video-transcoder.middleware', []));
+
+        $this->registerRoutes();
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'video-transcoder');
     }
@@ -35,5 +35,32 @@ class VideoTranscoderServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/video-transcoder.php', 'video-transcoder');
+    }
+
+    /**
+     * Register the package routes.
+     *
+     * @return void
+     */
+    private function registerRoutes()
+    {
+        Route::group($this->routeConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
+        });
+    }
+
+    /**
+     * Get the Telescope route group configuration array.
+     *
+     * @return array
+     */
+    private function routeConfiguration()
+    {
+        return [
+            'domain' => config('video-transcoder.domain', null),
+//            'namespace' => 'AustinW\VideoTranscoder\Http\Controllers',
+            'prefix' => config('video-transcoder.path'),
+            'middleware' => 'video-transcoder',
+        ];
     }
 }

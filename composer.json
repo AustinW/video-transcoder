@@ -16,9 +16,13 @@
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "dennernavarro/transcoder": "dev-master",
+        "sistemi-etime/flysystem-plugin-aws-s3-v3": "^1.0",
+        "spatie/laravel-medialibrary": "^8.0.0"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-master",
         "friendsofphp/php-cs-fixer": "^2.16",
         "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^9.0",
