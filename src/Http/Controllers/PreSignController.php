@@ -12,7 +12,7 @@ class PreSignController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file_name' => 'required'
+            'file_name' => 'required',
         ]);
 
         return response()->json(['data' => [
